@@ -1,0 +1,25 @@
+.bolg-card-grid-media{
+        display: grid;
+        grid-template-columns: repeat(4, 0fr);
+        gap: 10px;
+        margin: 2rem ;
+        justify-content: space-evenly;
+}
+
+@media (max-width: 1250px){
+    .bolg-card-grid-media{
+        grid-template-columns: repeat(3, 0fr);
+    }
+}
+
+@media (max-width: 950px){
+    .bolg-card-grid-media{
+        grid-template-columns: repeat(2, 0fr);
+    }
+}
+
+@media (max-width: 650px){
+    .bolg-card-grid-media{
+        grid-template-columns: repeat(1, 0fr);
+    }
+}
