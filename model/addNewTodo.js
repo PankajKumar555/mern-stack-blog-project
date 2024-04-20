@@ -3,14 +3,18 @@ import mongoose from "mongoose";
 const AddBlogSchema = new mongoose.Schema({
   blogTitle: {
     type: String,
-    // required: true,
   },
   imageUrl: {
     type: String,
   },
   blogBody: {
     type: String,
-    // required: true,
+  },
+  email: {
+    type: String,
+  },
+  username: {
+    type: String,
   },
   createdAt: {
     type: Date,

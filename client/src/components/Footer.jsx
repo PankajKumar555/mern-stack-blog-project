@@ -1,64 +1,86 @@
 import React from "react";
-import { logo } from "../urls/CarouselImageUrls";
+import "./Footer.css";
+import Logo from "../images/Logo.jpg";
 
-function Footer() {
+const Footer = () => {
   return (
-    <footer style={footerStyle}>
-      <div style={footerContentStyle} className="footer-content">
-        <div style={footerLogoStyle} className="footer-logo">
-          <img src={logo} alt="Logo" style={logoImageStyle} />
-          <h1 style={logoTextStyle}>BLOG</h1>
+    <>
+      <footer className="footer-distributed">
+        <div className="footer-left">
+          <img src={Logo} style={{ height: "50px" }} alt="Logo" />
+          <p className="footer-links">
+            <a className="link-1">Home</a>
+
+            <a>Blog</a>
+
+            <a>Pricing</a>
+
+            <a>About</a>
+
+            <a>Faq</a>
+
+            <a>Contact</a>
+          </p>
+
+          <p className="footer-company-name">Created By Pankaj © 2024</p>
         </div>
-      </div>
-      <div style={footerBottomStyle} className="footer-bottom">
-        <p style={copyrightStyle}>
-          &copy; {new Date().getFullYear()} Company Name. All rights reserved by
-          Pankaj.
-        </p>
-      </div>
-    </footer>
+
+        <div className="footer-center">
+          <div>
+            <i className="fa-solid fa-location-dot"></i>
+            <p>
+              <span>444 S. East West</span> Delhi, India
+            </p>
+          </div>
+
+          <div>
+            <i className="fa fa-phone"></i>
+            <p>+91.555.888.7777</p>
+          </div>
+
+          <div>
+            <i className="fa fa-envelope"></i>
+            <p>
+              <a href="mailto:pankajsing555@gmail.com">
+                pankajsing555@gmail.com
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div className="footer-right">
+          <p className="footer-company-about">
+            <span>About the company</span>
+            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce
+            euismod convallis velit, eu auctor lacus vehicula sit amet.
+          </p>
+
+          <div className="footer-icons">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com/" target="_blank" rel="noreferrer">
+              <i className="fa-brands fa-twitter"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://www.github.com/" target="_blank" rel="noreferrer">
+              <i className="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </footer>
+    </>
   );
-}
-
-// Define CSS styles as JavaScript objects
-const footerStyle = {
-  backgroundColor: "#333",
-  color: "#fff",
-  padding: "50px 0",
-};
-
-const footerContentStyle = {
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  maxWidth: "1200px",
-  margin: "0 auto",
-};
-
-const footerLogoStyle = {
-  display: "flex",
-  alignItems: "center",
-};
-
-const logoImageStyle = {
-  width: "100px",
-  height: "auto",
-  paddingBottom: "20px",
-  marginLeft: "10px",
-};
-
-const logoTextStyle = {
-  marginLeft: "10px",
-};
-
-const footerBottomStyle = {
-  backgroundColor: "#111",
-  textAlign: "center",
-  padding: "10px 0",
-};
-
-const copyrightStyle = {
-  margin: "0",
 };
 
 export default Footer;

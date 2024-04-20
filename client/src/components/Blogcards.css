@@ -6,6 +6,14 @@
         justify-content: space-evenly;
 }
 
+.zoom-effect {
+  transition: transform 0.5s ease;
+}
+
+.zoom-effect:hover {
+  transform: scale(1.1);
+}
+
 @media (max-width: 1250px){
     .bolg-card-grid-media{
         grid-template-columns: repeat(3, 0fr);

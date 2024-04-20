@@ -8,8 +8,10 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded());
 
 app.use("/addNewBlog", Routes);
+app.use("/", Routes);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
