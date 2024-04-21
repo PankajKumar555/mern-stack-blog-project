@@ -58,14 +58,21 @@ function BasicExample() {
     }
   };
   // get image logic
-  const allImageUrls = fetchBlogs && fetchBlogs.map((blog) => blog?.imageUrl);
+  // const allImageUrls = fetchBlogs && fetchBl?ogs.map((blog) => blog?.imageUrl);
+
+  const allImageUrls =
+    fetchBlogs && Array.isArray(fetchBlogs)
+      ? fetchBlogs.map((blog) => blog?.imageUrl)
+      : [];
 
   const isValidUrl =
     allImageUrls && allImageUrls.map((url) => /^https?:\/\/.*/.test(url));
 
   // filtered image logic
   const allFilteredImageUrls =
-    filteredData && filteredData.map((blog) => blog?.imageUrl);
+    filteredData && Array.isArray(filteredData)
+      ? filteredData.map((blog) => blog?.imageUrl)
+      : null;
 
   const isValidUrlFilteredData =
     allFilteredImageUrls &&
@@ -117,12 +124,13 @@ function BasicExample() {
                     </Card.Body>
                   </Card>
                 ))
-              : fetchBlogs.map((data) => (
+              : Array.isArray(fetchBlogs) &&
+                fetchBlogs.map((data, index) => (
                   <Card
                     style={{ width: "18rem", marginTop: "2rem" }}
                     key={data._id}
                   >
-                    {isValidUrl[fetchBlogs.indexOf(data)] ? (
+                    {isValidUrl[index] ? (
                       <Card.Img
                         variant="top"
                         src={data.imageUrl}
