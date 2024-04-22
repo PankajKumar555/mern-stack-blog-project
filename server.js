@@ -15,7 +15,11 @@ app.use("/addNewBlog", Routes);
 app.use("/", Routes);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.resolve(__dirname, "client", "build")));
+  // app.use(express.static(path.resolve(__dirname, "client", "build")));
+  const staticFilesPath = path.join(process.cwd(), "client", "build");
+
+  // Serve static files from the defined directory path
+  app.use(express.static(staticFilesPath));
 }
 
 const PORT = process.env.PORT || 8000;
