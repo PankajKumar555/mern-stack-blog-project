@@ -35,7 +35,7 @@ const Login = () => {
     if (!isLogin) {
       setLoading(true);
       try {
-        const url = `${baseURL}/signup`;
+        const url = `${baseURL}/blog/signup`;
         await axios.post(url, formData);
         setFormData({ username: "", email: "", password: "" });
         setIsLogin(true);
@@ -50,7 +50,7 @@ const Login = () => {
     if (isLogin) {
       setLoading(true);
       try {
-        const url = `${baseURL}/login`;
+        const url = `${baseURL}/blog/login`;
         const { email, password } = formData;
         const loginData = { email, password };
         const responce = await axios.post(url, loginData);

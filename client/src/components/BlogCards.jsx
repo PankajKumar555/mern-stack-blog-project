@@ -31,7 +31,7 @@ function BasicExample() {
 
   const getBlogsData = async () => {
     try {
-      const url = `${baseURL}/addNewBlog`;
+      const url = `${baseURL}/blog`;
       const fetchBlog = await axios.get(url);
       setFetchBlogs(fetchBlog.data);
       setLoading(false);

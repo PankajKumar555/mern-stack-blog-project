@@ -36,7 +36,7 @@ function Blogs({ handleBackClick, values, getBlogsData, imageUrlCards }) {
     const id = values._id;
     setLoading(true);
     try {
-      const url = `${baseURL}/addNewBlog/${id}`;
+      const url = `${baseURL}/blog/${id}`;
       const deletedData = await axios.delete(url);
       setLoading(false);
       toast.success("Blog deleted Successfully");
@@ -54,7 +54,7 @@ function Blogs({ handleBackClick, values, getBlogsData, imageUrlCards }) {
     const id = values._id;
     setLoading(true);
     try {
-      const url = `${baseURL}/addNewBlog/${id}`;
+      const url = `${baseURL}/blog/${id}`;
       await axios.put(url, { blogBody: text });
       setLoading(false);
       toast.success("Blog updated Successfully");

@@ -82,7 +82,7 @@ function ContactUs() {
     }
     setLoading(true);
     try {
-      const url = `${baseURL}/contact`;
+      const url = `${baseURL}/blog/contact`;
       const response = await axios.post(url, formData);
       if (response.status === 200) {
         setFormData({

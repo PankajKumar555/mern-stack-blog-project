@@ -51,7 +51,7 @@ function Example({ handleSubmitUpdate }) {
         username: userDetails.name,
         email: userDetails.email,
       };
-      const url = `${baseURL}/addNewBlog`;
+      const url = `${baseURL}/blog`;
       await axios.post(url, newFormData);
       setLoading(false);
       setShow(false);

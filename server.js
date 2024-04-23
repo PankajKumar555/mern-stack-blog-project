@@ -11,8 +11,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded());
 
-app.use("/addNewBlog", Routes);
-app.use("/", Routes);
+app.use("/blog", Routes);
+// app.use("/", Routes);
 
 if (process.env.NODE_ENV === "production") {
   const staticFilesPath = path.join(process.cwd(), "client", "build");
