@@ -78,17 +78,17 @@ route.post("/login", async (req, res) => {
         process.env.ACCESS_SECRET_KEY,
         { expiresIn: "15m" }
       );
-      const refershToken = jwt.sign(
+      const refreshToken = jwt.sign(
         user.toJSON(),
         process.env.REFERSH_SECRET_KEY
       );
 
-      const newToken = await Token.create({ token: refershToken });
+      const newToken = await Token.create({ token: refreshToken });
       await newToken.save();
 
       return res.status(200).json({
         accessToken: accessToken,
-        refershToken: refershToken,
+        refreshToken: refreshToken,
         email: user.email,
         username: user.username,
       });

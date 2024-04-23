@@ -54,14 +54,15 @@ const Login = () => {
         const { email, password } = formData;
         const loginData = { email, password };
         const responce = await axios.post(url, loginData);
+        console.log("---------->res", responce);
         if (responce.statusText === "OK") {
           sessionStorage.setItem(
             "accessToken",
             `Bearer ${responce.data.accessToken}`
           );
           sessionStorage.setItem(
-            "refershToken",
-            `Bearer ${responce.data.refershToken}`
+            "refreshToken",
+            `Bearer ${responce.data.refreshToken}`
           );
           setUserDetails({
             name: responce.data.username,

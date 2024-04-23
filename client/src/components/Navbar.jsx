@@ -48,7 +48,7 @@ function NavScrollExample() {
       setUserDetails({ name: "", username: "" });
       navigate("/login");
       sessionStorage.removeItem("accessToken");
-      sessionStorage.removeItem("refershToken");
+      sessionStorage.removeItem("refreshToken");
     }
     if (!isUserLoggedIn) {
       navigate("/login");
