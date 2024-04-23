@@ -54,8 +54,7 @@ const Login = () => {
         const { email, password } = formData;
         const loginData = { email, password };
         const responce = await axios.post(url, loginData);
-        console.log("---------->res", responce);
-        if (responce.statusText === "OK") {
+        if (responce.status === 200) {
           sessionStorage.setItem(
             "accessToken",
             `Bearer ${responce.data.accessToken}`
